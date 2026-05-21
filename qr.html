@@ -6,19 +6,20 @@
 <title>QR投影｜社長コンサルタント協会</title>
 <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700;900&family=Oswald:wght@700&display=swap');
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Noto Sans JP',sans-serif;background:linear-gradient(135deg,#FFF8F2 0%,#FFE4C8 100%);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;}
+body{font-family:'Noto Sans JP',sans-serif;background:linear-gradient(135deg,#FFF8F2 0%,#FFE4C8 100%);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;}
 .card{background:white;border-radius:24px;padding:40px 32px;text-align:center;box-shadow:0 8px 40px rgba(242,106,0,.15);border:3px solid #FFD4A8;max-width:480px;width:100%;}
 .logo{width:72px;height:72px;object-fit:contain;margin-bottom:16px;}
-.org{font-size:13px;color:#F26A00;font-weight:700;margin-bottom:4px;}
+.org{font-size:13px;color:#F26A00;font-weight:700;margin-bottom:4px;letter-spacing:.05em;}
 .title{font-size:clamp(22px,5vw,32px);font-weight:900;color:#2D2D2D;line-height:1.35;margin-bottom:8px;}
 .title em{color:#F26A00;font-style:normal;}
 .sub{font-size:14px;color:#777;margin-bottom:28px;line-height:1.6;}
-.qr-wrap{background:#FFF8F2;border-radius:16px;padding:20px;margin-bottom:20px;border:2px solid #FFD4A8;}
-.url-box{background:#FFF3E8;border-radius:8px;padding:10px 16px;font-size:13px;color:#F26A00;font-weight:700;margin-bottom:20px;word-break:break-all;}
-.badges{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:16px;}
-.badge{background:#FFF3E8;border:1px solid #FFD4A8;border-radius:20px;padding:6px 14px;font-size:12px;font-weight:700;color:#2D2D2D;}
+.qr-wrap{background:#FFF8F2;border-radius:16px;padding:20px;margin-bottom:24px;border:2px solid #FFD4A8;}
+#qr-canvas{margin:0 auto;display:block;}
+.url-box{background:#FFF3E8;border-radius:8px;padding:10px 16px;font-size:13px;color:#F26A00;font-weight:700;margin-bottom:24px;word-break:break-all;}
+.badges{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:20px;}
+.badge{background:#FFF3E8;border:1px solid #FFD4A8;border-radius:20px;padding:6px 16px;font-size:12px;font-weight:700;color:#2D2D2D;}
 .note{font-size:11px;color:#AAA;}
 </style>
 </head>
@@ -39,9 +40,9 @@ body{font-family:'Noto Sans JP',sans-serif;background:linear-gradient(135deg,#FF
   <p class="note">※診断結果はその場で表示されます</p>
 </div>
 <script>
-const TARGET=location.origin+'/';
-document.getElementById('url-display').textContent=TARGET;
-QRCode.toCanvas(document.getElementById('qr-canvas'),TARGET,{width:220,margin:2,color:{dark:'#F26A00',light:'#FFF8F2'}},err=>{if(err)console.error(err);});
+const TARGET_URL=location.origin+'/';
+document.getElementById('url-display').textContent=TARGET_URL;
+QRCode.toCanvas(document.getElementById('qr-canvas'),TARGET_URL,{width:220,margin:2,color:{dark:'#F26A00',light:'#FFF8F2'}},function(err){if(err)console.error(err);});
 </script>
 </body>
 </html>
