@@ -7,7 +7,41 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@600;700&display=swap');
 :root{
-  --orange:#F26A00;
+  --orDROP TABLE IF EXISTS consult_requests;
+DROP TABLE IF EXISTS shindan_results;
+
+CREATE TABLE shindan_results (
+  id uuid DEFAULT gen_random_uuid() PRIMARY KEY,
+  created_at timestamp with time zone DEFAULT now(),
+  name text,
+  company text,
+  income text,
+  emp text,
+  worry text,
+  total_score integer,
+  rank text,
+  category_scores jsonb,
+  answers jsonb
+);
+
+CREATE TABLE consult_requests (
+  id uuid DEFAULT gen_random_uuid() PRIMARY KEY,
+  created_at timestamp with time zone DEFAULT now(),
+  name text,
+  company text,
+  email text,
+  phone text,
+  message text,
+  shindan_id uuid REFERENCES shindan_results(id)
+);
+
+ALTER TABLE shindan_results ENABLE ROW LEVEL SECURITY;
+ALTER TABLE consult_requests ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "insert_shindan" ON shindan_results FOR INSERT WITH CHECK (true);
+CREATE POLICY "insert_consult" ON consult_requests FOR INSERT WITH CHECK (true);
+CREATE POLICY "select_shindan" ON shindan_results FOR SELECT USING (true);
+CREATE POLICY "select_consult" ON consult_requests FOR SELECT USING (true);ange:#F26A00;
   --orange-mid:#FF8C2A;
   --orange-light:#FFAA5C;
   --orange-pale:#FFF3E8;
@@ -519,6 +553,41 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--orange-bg);color:var
 </div>
 
 <script>
+
+const SUPABASE_URL = 'https://sfoxzlhqliysleocxvxi.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_Hlc5Beq3q2dmzdLhNmonrg_ielG4MSW';
+
+async function saveResult(data) {
+  try {
+    const res = await fetch(SUPABASE_URL + '/rest/v1/shindan_results', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': SUPABASE_KEY,
+        'Authorization': 'Bearer ' + SUPABASE_KEY,
+        'Prefer': 'return=representation'
+      },
+      body: JSON.stringify(data)
+    });
+    const json = await res.json();
+    return json[0]?.id || null;
+  } catch(e) { console.error(e); return null; }
+}
+
+async function saveConsult(data) {
+  try {
+    await fetch(SUPABASE_URL + '/rest/v1/consult_requests', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': SUPABASE_KEY,
+        'Authorization': 'Bearer ' + SUPABASE_KEY
+      },
+      body: JSON.stringify(data)
+    });
+  } catch(e) { console.error(e); }
+}
+
 const CATS=[
 {num:1,name:"出張旅費規程",sub:"日当・宿泊費で手取りを非課税で増やす",merit:"年間 最大108万円 非課税所得",
 items:[
@@ -689,6 +758,12 @@ function showResult(){
   });
   document.getElementById('result-grid').innerHTML=gr;
   showScreen('screen-result');
+  const sc2=ans.map(a=>a.length);
+  const tot2=sc2.reduce((a,b)=>a+b,0);
+  const pct2=Math.round((tot2/55)*100);
+  const rd2=RANK_DATA.find(r=>pct2>=r.min)||RANK_DATA[RANK_DATA.length-1];
+  const cats2={};CATS.forEach((c,i)=>{cats2[c.name]=sc2[i];});
+  saveResult({name:ud.name,company:ud.company,income:ud.income,emp:ud.emp,worry:ud.worry,total_score:tot2,rank:rd2.rank,category_scores:cats2,answers:ans}).then(id=>{window._shindanId=id;});
 }
 
 function downloadResult(){
@@ -732,6 +807,7 @@ function submitConsult(){
   consultInfo={name:cname,email:cemail};
   const CALENDAR_URL='https://calendly.com/YOUR_LINK';
   showScreen('screen-consult-done');
+  saveConsult({name:cname,email:cemail,shindan_id:window._shindanId||null});
   document.getElementById('consult-done-name').textContent=cname+' 様';
   document.getElementById('calendar-link').href=CALENDAR_URL;
 }
