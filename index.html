@@ -41,7 +41,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--orange-bg);color:var
   padding:16px 20px;
   margin:0 auto 24px;
   max-width:420px;
-  text-align:left;
+  text-align:center;
   box-shadow:0 3px 14px rgba(242,106,0,.1);
   position:relative;
 }
@@ -235,8 +235,8 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--orange-bg);color:var
     <div class="hero-safety">
       <div class="hero-safety-eyebrow">💡 知っておきたい大切なこと</div>
       <div class="hero-safety-main">
-        中小企業の最終的なセーフティーネットは、<br>
-        <em>経営者個人の資産</em>です。
+        <span style="display:block;font-size:14px;font-weight:900;color:var(--text);margin-bottom:2px;">中小企業の最終的なセーフティーネットは、</span>
+        <span style="display:block;font-size:18px;font-weight:900;line-height:1.4;"><em style="font-style:normal;color:var(--orange);">経営者個人の資産</em><span style="color:var(--text);">です。</span></span>
       </div>
       <div class="hero-safety-note">
         だからこそ、税金・社保料を正しく最適化し、<br>手元に残るお金を最大化することが経営者の責務です。<br>まず3分で、あなたの会社の現状を確認してください。
@@ -252,6 +252,12 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--orange-bg);color:var
       <div class="hero-check-item">所要時間 約3分・選ぶだけでOK</div>
       <div class="hero-check-item">難しい知識は不要</div>
       <div class="hero-check-item">診断結果はその場で表示</div>
+    </div>
+    <div style="background:linear-gradient(135deg,#fff3e0,#ffe0b2);border:2px solid var(--orange);border-radius:16px;padding:20px;margin:0 auto 24px;max-width:420px;text-align:center;box-shadow:0 4px 20px rgba(242,106,0,.2);">
+      <div style="font-size:22px;margin-bottom:8px;">💰</div>
+      <div style="font-size:15px;font-weight:900;color:var(--text);margin-bottom:10px;line-height:1.55;">もし年間<span style="color:var(--orange);font-size:20px;">300万円</span>、<br>手元に残ったら<br>社長、<span style="color:var(--orange);">何に使いたいですか？</span></div>
+      <div style="font-size:11px;color:var(--text-sub);line-height:1.9;margin-bottom:12px;">家族との旅行？　事業への再投資？　老後の安心？<br>あるいは、ずっと後回しにしてきた夢を叶えること？<br><br>多くの社長が<strong style="color:var(--text);">毎年300万円以上</strong>を<br>知らずに社会保険料や税金で失っています。<br>それを合法的に取り戻す方法があります。</div>
+      <div style="font-size:10px;color:var(--orange);font-weight:700;letter-spacing:.05em;">↓ まず3分で現状チェック ↓</div>
     </div>
     <button class="btn-start" onclick="showScreen('screen-form')">今すぐ無料で診断する</button>
     <p class="hero-note">入力情報はご相談の連絡のみに使用します</p>
@@ -295,25 +301,6 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--orange-bg);color:var
     </div>
   </section>
 
-  <section class="sec sec-pale">
-    <div class="sec-label">診断する11テーマ</div>
-    <div class="sec-title">社長の手取りを左右する<br>11の重要テーマ</div>
-    <div class="cat-list">
-      <div class="cat-item"><div class="cat-num">01</div><div><div class="cat-name">出張旅費規程</div><div class="cat-merit">💰 年間 最大108万円 非課税</div></div></div>
-      <div class="cat-item"><div class="cat-num">02</div><div><div class="cat-name">倒産防止共済の活用</div><div class="cat-merit">💰 年間 最大240万円 損金</div></div></div>
-      <div class="cat-item"><div class="cat-num">03</div><div><div class="cat-name">事前確定届出給与</div><div class="cat-merit">💰 社保料 最大150万円削減</div></div></div>
-      <div class="cat-item"><div class="cat-num">04</div><div><div class="cat-name">補助金・助成金の活用</div><div class="cat-merit">💰 返済不要 最大数千万円</div></div></div>
-      <div class="cat-item"><div class="cat-num">05</div><div><div class="cat-name">決算対策・法人節税</div><div class="cat-merit">💰 決算前の対策で数十〜数百万円節税</div></div></div>
-      <div class="cat-item"><div class="cat-num">06</div><div><div class="cat-name">銀行借入金の最適化</div><div class="cat-merit">💰 年間 数十万円削減</div></div></div>
-      <div class="cat-item"><div class="cat-num">07</div><div><div class="cat-name">社会保険料の最適化</div><div class="cat-merit">💰 社保料 最大130万円削減</div></div></div>
-      <div class="cat-item"><div class="cat-num">08</div><div><div class="cat-name">退職金規程の整備</div><div class="cat-merit">💰 退職時 数百万円の節税</div></div></div>
-      <div class="cat-item"><div class="cat-num">09</div><div><div class="cat-name">名義変更で手取りを増やす</div><div class="cat-merit">💰 個人の保険コスト30%削減</div></div></div>
-      <div class="cat-item"><div class="cat-num">10</div><div><div class="cat-name">借り上げ社宅制度の活用</div><div class="cat-merit">💰 年間 最大192万円 削減</div></div></div>
-      <div class="cat-item"><div class="cat-num">11</div><div><div class="cat-name">確定拠出年金（DC）活用</div><div class="cat-merit">💰 税ゼロで年間66万円積立</div></div></div>
-    </div>
-    <p class="cat-note">※各項目の金額は各対策を単独で採用した場合の目安です。複数を組み合わせて実施することで、効果が変わる場合があります。詳細は専門家にご確認ください。</p>
-  </section>
-
   <section class="sec sec-white" style="text-align:center;">
     <div class="sec-title">まずは3分で<br>自社の現状を確認しましょう</div>
     <div class="sec-sub" style="margin-bottom:22px;">質問はすべて選ぶだけ。難しい知識は不要です。</div>
@@ -347,7 +334,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--orange-bg);color:var
       <div class="step-dot">3</div><div class="step-line"></div>
       <div class="step-dot">4</div>
     </div>
-    <div class="step-label">① 基本情報　→　② 11テーマ診断　→　③ 結果　→　④ 無料相談</div>
+    <div class="step-label">① 基本情報　→　② 7テーマ診断　→　③ 結果　→　④ 無料相談</div>
   </div>
   <div class="form-section">
     <h2 class="form-title">基本情報のご入力</h2>
@@ -364,7 +351,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--orange-bg);color:var
       <select id="f-emp"><option value="">選択してください</option><option>1名（自分のみ）</option><option>2〜5名</option><option>6〜20名</option><option>21〜50名</option><option>51〜100名</option><option>101名以上</option></select></div>
     <div class="field"><label>現在のお悩み・ご興味 <span class="opt">任意</span></label>
       <select id="f-worry"><option value="">選択してください</option><option>税金を減らしたい</option><option>社会保険料を減らしたい</option><option>役員報酬の最適化をしたい</option><option>退職金・老後の準備をしたい</option><option>借入・資金繰りを改善したい</option><option>補助金・助成金を活用したい</option><option>全般的に見直したい</option><option>その他</option></select></div>
-    <button class="btn-next" onclick="startQuiz()">11テーマの診断へ進む →</button>
+    <button class="btn-next" onclick="startQuiz()">7テーマの診断へ進む →</button>
     <button class="btn-back" onclick="showScreen('screen-top')">← トップへ戻る</button>
   </div>
 </div>
@@ -378,7 +365,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--orange-bg);color:var
       <div class="step-dot">3</div><div class="step-line"></div>
       <div class="step-dot">4</div>
     </div>
-    <div class="step-label">① 基本情報　→　② 11テーマ診断　→　③ 結果　→　④ 無料相談</div>
+    <div class="step-label">① 基本情報　→　② 7テーマ診断　→　③ 結果　→　④ 無料相談</div>
   </div>
   <div class="quiz-section">
     <div class="quiz-progress">
@@ -398,7 +385,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--orange-bg);color:var
       <div class="step-dot active">3</div><div class="step-line"></div>
       <div class="step-dot">4</div>
     </div>
-    <div class="step-label">① 基本情報　→　② 11テーマ診断　→　③ 結果　→　④ 無料相談</div>
+    <div class="step-label">① 基本情報　→　② 7テーマ診断　→　③ 結果　→　④ 無料相談</div>
   </div>
   <div class="result-section">
     <div class="result-hero">
@@ -418,13 +405,23 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--orange-bg);color:var
       <div class="result-top3-title">🎯 優先取り組みテーマ TOP3</div>
       <div id="result-top3"></div>
     </div>
-    <div style="background:linear-gradient(135deg,var(--orange-pale),#FFE4C8);border:2px solid var(--border);border-radius:14px;padding:20px;margin-bottom:20px;text-align:center;">
-      <div style="font-size:14px;font-weight:900;color:var(--text);margin-bottom:6px;">💡 この改善案、詳しく知りたいですか？</div>
-      <div style="font-size:12px;color:var(--text-sub);margin-bottom:16px;line-height:1.7;">専門家との無料オンライン面談で、あなたの会社に合わせた<br>具体的な削減プランをご提案します。</div>
-      <button class="btn-consult" onclick="showScreen('screen-consult')">👉 無料で改善案を聞いてみる</button>
-      <div style="font-size:10px;color:var(--text-sub);margin-top:10px;">※しつこい営業は一切ありません</div>
+    <div style="background:linear-gradient(135deg,#fff8f0,#fff0e0);border:2px solid var(--orange);border-radius:16px;padding:24px 20px;margin-bottom:20px;text-align:center;box-shadow:0 4px 20px rgba(242,106,0,.15);">
+      <div style="font-size:28px;margin-bottom:8px;">🎯</div>
+      <div style="font-size:15px;font-weight:900;color:var(--text);margin-bottom:10px;line-height:1.5;">実は、あと<span style="color:var(--orange);font-size:20px;">5つ</span>の削減方法があります</div>
+      <div style="font-size:12px;color:var(--text-sub);margin-bottom:4px;line-height:1.8;">今回の診断は<strong style="color:var(--text);">5テーマのみ</strong>でした。<br>社長コンサルタント協会では、残り5つの方法も<strong style="color:var(--orange);">無料</strong>でご案内しています。</div>
+      <div style="margin:14px 0;padding:12px;background:white;border-radius:10px;border:1px solid var(--border);font-size:11px;text-align:left;line-height:1.9;color:var(--text);">
+        ✅ 国の制度を使って手残りを増やす（助成金・補助金）<br>
+        ✅ 銀行融資を見直して、資金繰りを良くする<br>
+        ✅ 今の自宅の名義を変えて手残りを増やす<br>
+        ✅ 役員借入金を整理して、会社と社長の財務を健全化する<br>
+        ✅ 銀行の連帯保証人になっていることで、手取りを増やす<br>
+
+      </div>
+      <div style="font-size:13px;font-weight:700;color:var(--orange);margin-bottom:14px;line-height:1.7;">もし年間300万円手元に残ったら、<br>社長、何に使いたいですか？<br><span style="font-size:12px;color:var(--text-sub);font-weight:500;">家族との旅行？事業拡大？老後の安心？</span></div>
+      <button class="btn-consult" onclick="showScreen('screen-consult')" style="font-size:14px;padding:15px 24px;">👉 残り5つの方法も無料で聞く</button>
+      <div style="font-size:10px;color:var(--text-sub);margin-top:10px;">✓ 完全無料　✓ しつこい営業なし　✓ 全国オンライン対応</div>
     </div>
-    <div class="result-all-title">全11テーマ 診断結果</div>
+    <div class="result-all-title">7テーマ 診断結果</div>
     <div class="result-grid" id="result-grid"></div>
     <button class="btn-dl" onclick="downloadResult()">📥 診断結果をダウンロード（TXT）</button>
     <button class="btn-consult" onclick="showScreen('screen-consult')" style="margin-bottom:24px;">専門家に無料相談する →</button>
@@ -462,7 +459,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--orange-bg);color:var
       <div class="step-dot done">3</div><div class="step-line"></div>
       <div class="step-dot active">4</div>
     </div>
-    <div class="step-label">① 基本情報　→　② 11テーマ診断　→　③ 結果　→　④ 無料相談</div>
+    <div class="step-label">① 基本情報　→　② 7テーマ診断　→　③ 結果　→　④ 無料相談</div>
   </div>
   <div class="consult-section">
     <div class="consult-hero">
@@ -520,93 +517,61 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--orange-bg);color:var
 
 <script>
 const CATS=[
-{num:1,name:"出張旅費規程",sub:"日当・宿泊費で手取りを非課税で増やす",merit:"年間 最大108万円 非課税所得",
+{num:1,name:"会社の規定を整備して手取りを増やす方法",sub:"旅費規程・退職金規程で非課税収入を最大化",merit:"年間 最大200万円以上 非課税・節税",
 items:[
-"出張旅費規程を会社で作成していない",
-"月に3回以上、社外への出張・外出がある",
-"日当を支給していない（または交通費のみ精算している）",
-"宿泊を伴う出張がある",
-"非課税で役員の手取りを増やしたい"
+"出張旅費規程（日当・宿泊費）を会社で作成していない",
+"役員退職金規程が整備されていない",
+"日当や旅費が非課税で受け取れることを活用していない",
+"退職金の税優遇（退職所得控除）を使った積立をしていない",
+"規程を整備するだけで手取りが増えることを知らなかった"
 ]},
-{num:2,name:"倒産防止共済の活用",sub:"節税＆緊急資金確保の二刀流",merit:"年間 最大240万円 損金計上",
+{num:2,name:"全額経費で資金プールできる経営セーフティ共済",sub:"節税しながら最大800万円を積み立てる",merit:"年間 最大240万円 全額損金・緊急資金確保",
 items:[
-"倒産防止共済（セーフティ共済）に加入していない",
-"毎月の掛金（最大20万円）を損金計上できることを知らなかった",
+"経営セーフティ共済（倒産防止共済）に加入していない",
+"掛金が全額損金（経費）になることを知らなかった",
 "決算前に利益が出すぎて節税方法に困ったことがある",
-"取引先の倒産リスクに備えた資金を確保していない",
+"取引先の倒産リスクに備えた資金を準備していない",
 "無担保・無保証人で緊急融資を受けられることを知らなかった"
 ]},
-{num:3,name:"事前確定届出給与",sub:"役員賞与で社保料を大幅に削減",merit:"社保料 年間 最大150万円削減",
-items:[
-"役員報酬を毎月定額のみで受け取っている",
-"役員賞与（事前確定届出給与）を活用したことがない",
-"年収1,000万円以上の役員報酬を受け取っている",
-"社会保険料が年間150万円以上になっている",
-"毎月の報酬を低く抑えて賞与で受け取る方法を知らなかった"
-]},
-{num:4,name:"補助金・助成金の活用",sub:"返済不要の公的資金を最大限獲得",merit:"返済不要の資金 最大数千万円",
-items:[
-"補助金・助成金を申請したことが一度もない",
-"どんな補助金・助成金があるか把握できていない",
-"設備投資・IT導入・採用・研修を検討している",
-"AI活用や社員向けAI研修の導入を検討している（AI補助金対象になる可能性あり）",
-"省エネ・DX・事業転換など新しい取り組みを検討している"
-]},
-{num:5,name:"決算対策・法人節税",sub:"利益を合法的に圧縮して法人税を削減",merit:"決算前の対策で数十〜数百万円の節税",
-items:[
-"決算直前に利益が出すぎて対策に困ったことがある",
-"法人税の節税対策を顧問税理士以外と相談したことがない",
-"経費化できる支出を見落としている可能性がある",
-"短期前払費用・保険・設備投資などを活用したことがない",
-"利益を内部留保以外の形で活用する方法を知りたい"
-]},
-{num:6,name:"銀行借入金の最適化",sub:"金利・保証料・返済条件の見直し",merit:"金利・保証料 年間数十万円削減",
-items:[
-"銀行からの借り入れが何年もそのままになっている",
-"現在の借入金利を正確に把握していない",
-"複数の銀行から借入があり、一本化を検討したことがない",
-"信用保証協会付き融資の保証料を削減できることを知らなかった",
-"返済条件（期間・据置等）を変更できることを知らなかった"
-]},
-{num:7,name:"社会保険料の最適化",sub:"標準報酬月額を適正化して毎年の負担を軽減",merit:"社保料 年間 最大130万円削減",
-items:[
-"毎月の報酬はすべて使わず余りが出ている",
-"外部積立てを非課税で受け取れるとしたら活用したい",
-"社会保険料の算定基礎届（7月）の仕組みを理解していない",
-"標準報酬月額の等級を下げることができると知らなかった",
-"社会保険料が実際の報酬水準より割高に感じている"
-]},
-{num:8,name:"退職金規程の整備",sub:"社長の退職金を最大限受け取る",merit:"退職時 数百万円の節税",
-items:[
-"法人保険や倒産防止共済に加入しているが退職金規程がない",
-"従業員の退職金を準備している",
-"役員報酬を下げすぎていて退職金計算で損をするかもしれない",
-"退職金の税優遇（退職所得控除）を活用したことがない",
-"代表取締役→取締役など役職変更のタイミングがある"
-]},
-{num:9,name:"名義変更で手取りを増やす",sub:"個人の保険コスト30%削減",merit:"年間 約24万円 実質削減",
+{num:3,name:"名義変更で社長の手取りを増やす方法",sub:"個人保険を法人名義に変えるだけで節税",merit:"年間 約24万円 実質削減・手取りアップ",
 items:[
 "個人名義で生命保険（死亡・医療・がん保険）に加入している",
 "保険料を給与（手取り）から支払っている",
 "個人保険を法人名義に変更できることを知らなかった",
 "法人の損金として保険料を計上したことがない",
-"月3万円以上の個人保険料を支払っている"
+"月3万円以上の個人保険料を手取りから支払っている"
 ]},
-{num:10,name:"借り上げ社宅制度の活用",sub:"住居費を会社経費にして手取りを大幅UP",merit:"年間 最大192万円 実質削減",
+{num:4,name:"分社化で会社のキャッシュを最大化する方法",sub:"複数法人で税負担を分散・キャッシュを守る",merit:"法人税・社保料 合計で数百万円削減の可能性",
 items:[
-"現在、自分の名義で賃貸住宅や持ち家に住んでいる",
-"住居費（家賃・住宅ローン）を個人の手取りから支払っている",
-"借り上げ社宅制度を活用すれば家賃の大部分を会社経費にできると知らなかった",
-"所得税・住民税・社会保険料の対象外で住居費を受け取りたい",
-"会社の経費を増やし、法人税を削減したい"
+"現在の法人が一つのみで、税率が高くなってきている",
+"利益の一部を別法人に移す方法を検討したことがない",
+"消費税の免税事業者を活用できることを知らなかった",
+"分社化によって社会保険料を最適化できることを知らなかった",
+"事業承継や将来の売却を視野に法人構造を整理したい"
 ]},
-{num:11,name:"確定拠出年金（DC）活用",sub:"税金ゼロで年間66万円積立・老後資産最大化",merit:"30年で888万円差＋節税1,000万円超",
+{num:5,name:"役員賞与を活用した社会保険料削減の方法（年金復活）",sub:"事前確定届出給与で社保料を大幅削減",merit:"社保料 年間 最大150万円削減・年金も復活",
 items:[
-"確定拠出年金（iDeCo・企業型DC）に加入していない、または未検討",
-"掛金が全額所得控除になることを知らなかった",
-"年間66万円（企業型DC上限）を税金ゼロで積み立てられることを知らなかった",
+"役員報酬を毎月定額のみで受け取っている",
+"事前確定届出給与（役員賞与）を活用したことがない",
+"年収600万円以上の役員報酬を受け取っている",
+"社会保険料が年間100万円以上になっている",
+"毎月の報酬を低く抑えて賞与で受け取る方法を知らなかった"
+]},
+{num:6,name:"給与を現金で受け取らずに社保料を削減する方法",sub:"現物給与・借り上げ社宅で社保料ゼロ化",merit:"社保料＋所得税 年間 最大200万円超の削減",
+items:[
+"毎月の役員報酬をすべて現金で受け取っている（一部を別の形に変えたことがない）",
+"賃金台帳の記載方法を変えるだけで社保料が下がることを知らなかった",
+"決算期や財務状況に関係なく、赤字でも社保料を削減できると知らなかった",
+"法人・個人のキャッシュアウトをゼロにしたまま社保料を削減できると知らなかった",
+"年収を変えずに、同じ年収の社長より社保料を100万円以上少なくできると知らなかった"
+]},
+{num:7,name:"年間66万円を税金・社保料ゼロで積み立てる方法",sub:"企業型DC（確定拠出年金）を最大活用",merit:"30年で888万円差＋節税・社保料削減1,000万円超",
+items:[
+"企業型確定拠出年金（DC）を導入していない",
+"掛金が全額損金かつ社保料の対象外になることを知らなかった",
+"年間66万円（企業型DC上限）を税金・社保料ゼロで積み立てられることを知らなかった",
 "運用益が非課税になることを知らなかった（通常は20%課税）",
-"社長として老後の資産形成を効率的に行う方法を探している"
+"老後の資産形成を会社のコストゼロで実現する方法を探している"
 ]}
 ];
 
@@ -618,7 +583,7 @@ const RANK_DATA=[
   {min:0,rank:"D",name:"要改善",comment:"毎年多額の税金・社会保険料を余分に支払っている可能性があります。早急に専門家に現状を診断してもらうことを強くお勧めします。改善インパクトが最も大きいのは今です。"}
 ];
 
-let cur=0,ans=Array(11).fill(null).map(()=>[]),ud={},consultInfo={};
+let cur=0,ans=Array(7).fill(null).map(()=>[]),ud={},consultInfo={};
 
 function showScreen(id){
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
@@ -639,13 +604,13 @@ function startQuiz(){
     emp:document.getElementById('f-emp').value,
     worry:document.getElementById('f-worry').value
   };
-  cur=0;ans=Array(11).fill(null).map(()=>[]);
+  cur=0;ans=Array(7).fill(null).map(()=>[]);
   renderQuiz();showScreen('screen-quiz');
 }
 
 function renderQuiz(){
-  const c=CATS[cur],pct=Math.round((cur/11)*100);
-  document.getElementById('quiz-label').textContent='テーマ '+(cur+1)+' / 11';
+  const c=CATS[cur],pct=Math.round((cur/7)*100);
+  document.getElementById('quiz-label').textContent='テーマ '+(cur+1)+' / 7';
   document.getElementById('quiz-pct').textContent=pct+'%';
   document.getElementById('prog-fill').style.width=pct+'%';
   const cs=new Set(ans[cur]);
@@ -653,7 +618,7 @@ function renderQuiz(){
   h+='<p style="font-size:12px;color:var(--text-sub);margin-bottom:12px;">当てはまる項目にチェックしてください（複数選択可）</p>';
   c.items.forEach((it,i)=>{const ck=cs.has(i);h+='<div class="check-item '+(ck?'checked':'')+'" onclick="tog('+i+')"><div class="check-box">'+(ck?'✓':'')+'</div><div class="check-label">'+it+'</div></div>';});
   h+='<div class="quiz-hint">✅ チェックが1つでもあれば改善の余地があります</div></div>';
-  const isLast=cur===10;
+  const isLast=cur===6;
   h+='<button class="btn-next" onclick="nxt()">'+(isLast?'診断結果を見る 🎯':'次のテーマへ →')+'</button>';
   if(cur>0)h+='<button class="btn-back" onclick="prv()">← 前へ戻る</button>';
   else h+='<button class="btn-back" onclick="showScreen(\'screen-form\')">← 基本情報へ戻る</button>';
@@ -661,19 +626,19 @@ function renderQuiz(){
 }
 
 function tog(i){const s=new Set(ans[cur]);s.has(i)?s.delete(i):s.add(i);ans[cur]=Array.from(s);renderQuiz();}
-function nxt(){if(cur<10){cur++;renderQuiz();window.scrollTo(0,0);}else showResult();}
+function nxt(){if(cur<6){cur++;renderQuiz();window.scrollTo(0,0);}else showResult();}
 function prv(){if(cur>0){cur--;renderQuiz();window.scrollTo(0,0);}}
 
 function showResult(){
   const sc=ans.map(a=>a.length);
   const tot=sc.reduce((a,b)=>a+b,0);
-  const pct=Math.round((tot/55)*100);
+  const pct=Math.round((tot/35)*100);
   const rd=RANK_DATA.find(r=>pct>=r.min)||RANK_DATA[RANK_DATA.length-1];
 
   document.getElementById('result-name').textContent=ud.name+' 様の診断結果';
   document.getElementById('result-rank-letter').textContent=rd.rank;
   document.getElementById('result-rank-name').textContent=rd.name;
-  document.getElementById('result-score-label').textContent='スコア：'+pct+'%（チェック数 '+tot+' / 55項目）';
+  document.getElementById('result-score-label').textContent='スコア：'+pct+'%（チェック数 '+tot+' / 35項目）';
   document.getElementById('result-comment-text').textContent=rd.comment;
 
   const rk=CATS.map((c,i)=>({c,s:sc[i]})).filter(x=>x.s>0).sort((a,b)=>b.s-a.s).slice(0,3);
@@ -694,7 +659,7 @@ function showResult(){
 function downloadResult(){
   const sc=ans.map(a=>a.length);
   const tot=sc.reduce((a,b)=>a+b,0);
-  const pct=Math.round((tot/55)*100);
+  const pct=Math.round((tot/35)*100);
   const rd=RANK_DATA.find(r=>pct>=r.min)||RANK_DATA[RANK_DATA.length-1];
   const now=new Date().toLocaleDateString('ja-JP');
   let txt='■ 社長の会社力診断 結果レポート\n';
@@ -702,9 +667,9 @@ function downloadResult(){
   txt+='お名前：'+ud.name+' 様\n';
   if(ud.company)txt+='会社名：'+ud.company+'\n';
   txt+='\n【総合ランク】 '+rd.rank+' ランク（'+rd.name+'）\n';
-  txt+='スコア：'+pct+'%（チェック数 '+tot+' / 55項目）\n\n';
+  txt+='スコア：'+pct+'%（チェック数 '+tot+' / 35項目）\n\n';
   txt+='【診断コメント】\n'+rd.comment+'\n\n';
-  txt+='【全11テーマの結果】\n';
+  txt+='【7テーマの診断結果】\n';
   CATS.forEach((c,i)=>{
     const s=sc[i];
     txt+=(i+1)+'. '+c.name+'：'+(s===0?'対策済み・該当なし':s+'/5項目 改善余地あり')+'\n';
