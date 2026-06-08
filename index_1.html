@@ -544,27 +544,21 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--orange-bg);color:var
 const CATS=[
 {num:1,name:"会社の規定を整備して手取りを増やす方法",sub:"旅費規程・退職金規程で非課税収入を最大化",merit:"年間 最大200万円以上 非課税・節税",
 items:[
-"出張旅費規程（日当・宿泊費）を会社で作成していない",
-"役員退職金規程が整備されていない",
-"日当や旅費が非課税で受け取れることを知らなかった",
-"退職金の税優遇（退職所得控除）を使った積立をしていない",
-"規程を整備するだけで手取りが増えることを知らなかった"
+"会社の規定を何年も変更していない（旅費規程・退職金規程）",
+"経営者が一番優遇されているのは退職金控除だと知っている",
+"日当や旅費が非課税で受け取れることを知っている"
 ]},
 {num:2,name:"役員賞与を活用した社会保険料削減の方法（年金復活）",sub:"事前確定届出給与で社保料を大幅削減",merit:"社保料 年間 最大150万円削減・年金も復活",
 items:[
-"役員報酬を毎月定額のみで受け取っている",
-"事前確定届出給与（役員賞与）を活用したことがない",
-"年収600万円以上の役員報酬を受け取っている",
+"役員でもボーナスをもらえることを知っている",
 "社会保険料が年間100万円以上になっている",
-"毎月の報酬を低く抑えて賞与で受け取る方法を知らなかった"
+"毎月の報酬を低く抑えて賞与で受け取る方法を知っている"
 ]},
 {num:3,name:"給与を現金で受け取らずに社保料を削減する方法",sub:"現物給与・借り上げ社宅で社保料ゼロ化",merit:"社保料＋所得税 年間 最大200万円超の削減",
 items:[
-"毎月の役員報酬をすべて現金で受け取っている（一部を別の形に変えたことがない）",
-"賃金台帳の記載方法を変えるだけで社保料が下がることを知らなかった",
-"決算期や財務状況に関係なく、赤字でも社保料を削減できると知らなかった",
-"法人・個人のキャッシュアウトをゼロにしたまま社保料を削減できると知らなかった",
-"年収を変えずに、同じ年収の社長より社保料を100万円以上少なくできると知らなかった"
+"年収を変えずに、同じ年収の社長より社保料を100万円以上少なくできることを知っている",
+"法人・個人のキャッシュアウトをゼロにしたまま社会保険料を削減できることを知っている",
+"決算期や財務状況に関係なく、赤字でも社保料を削減できることを知っている"
 ]}
 ];
 
@@ -641,7 +635,10 @@ function appendNextQuestion(){
   document.getElementById('chat-counter').textContent=chatCurrent+' / '+total+'問';
 
   // スクロール
-  setTimeout(()=>wrap.lastChild.scrollIntoView({behavior:'smooth',block:'end'}),100);
+  setTimeout(()=>{
+    wrap.lastChild.scrollIntoView({behavior:'smooth',block:'end'});
+    window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'});
+  },150);
 }
 
 function answerQ(isYes){
@@ -666,7 +663,10 @@ function answerQ(isYes){
   document.getElementById('chat-counter').textContent=chatCurrent+' / '+total+'問';
 
   if(chatCurrent<total){
-    setTimeout(()=>appendNextQuestion(),300);
+    setTimeout(()=>{
+      appendNextQuestion();
+      setTimeout(()=>window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'}),200);
+    },300);
   } else {
     setTimeout(()=>showResult(),500);
   }
@@ -675,13 +675,13 @@ function answerQ(isYes){
 function showResult(){
   const sc=ans.map(a=>a.length);
   const tot=sc.reduce((a,b)=>a+b,0);
-  const pct=Math.round((tot/15)*100);
+  const pct=Math.round((tot/9)*100);
   const rd=RANK_DATA.find(r=>pct>=r.min)||RANK_DATA[RANK_DATA.length-1];
 
   document.getElementById('result-name').textContent=ud.name+' 様の診断結果';
   document.getElementById('result-rank-letter').textContent=rd.rank;
   document.getElementById('result-rank-name').textContent=rd.name;
-  document.getElementById('result-score-label').textContent='スコア：'+pct+'%（チェック数 '+tot+' / 15項目）';
+  document.getElementById('result-score-label').textContent='スコア：'+pct+'%（チェック数 '+tot+' / 9項目）';
   document.getElementById('result-comment-text').textContent=rd.comment;
 
   const rk=CATS.map((c,i)=>({c,s:sc[i]})).filter(x=>x.s>0).sort((a,b)=>b.s-a.s).slice(0,3);
@@ -702,7 +702,7 @@ function showResult(){
 function downloadResult(){
   const sc=ans.map(a=>a.length);
   const tot=sc.reduce((a,b)=>a+b,0);
-  const pct=Math.round((tot/15)*100);
+  const pct=Math.round((tot/9)*100);
   const rd=RANK_DATA.find(r=>pct>=r.min)||RANK_DATA[RANK_DATA.length-1];
   const now=new Date().toLocaleDateString('ja-JP');
   let txt='■ 社長の会社力診断 結果レポート\n';
@@ -710,7 +710,7 @@ function downloadResult(){
   txt+='お名前：'+ud.name+' 様\n';
   if(ud.company)txt+='会社名：'+ud.company+'\n';
   txt+='\n【総合ランク】 '+rd.rank+' ランク（'+rd.name+'）\n';
-  txt+='スコア：'+pct+'%（チェック数 '+tot+' / 15項目）\n\n';
+  txt+='スコア：'+pct+'%（チェック数 '+tot+' / 9項目）\n\n';
   txt+='【診断コメント】\n'+rd.comment+'\n\n';
   txt+='【3つのテーマの診断結果】\n';
   CATS.forEach((c,i)=>{
